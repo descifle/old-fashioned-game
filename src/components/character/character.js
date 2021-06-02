@@ -7,8 +7,8 @@ class Character {
     }
 
     getAttacked = (damage) => {
-        if(this.health <= 0) {
-            return
+        if(this.health <= 0 || this.health === 'fainted') {
+            this.health = 'fainted'
         } else {
             this.health -= damage
         }
